@@ -4,10 +4,10 @@ LDFLAGS :=
 
 SRC := \
   src/mkm.c \
-  src/fileio.c
+  src/fileio.c \
+  src/line.c
 
 OBJ := $(SRC:src/%.c=build/%.o)
-
 BIN := build/mkm
 
 .PHONY: all clean run
