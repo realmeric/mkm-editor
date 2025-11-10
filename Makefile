@@ -4,13 +4,14 @@ LDFLAGS :=
 
 SRC := \
   src/mkm.c \
-  src/fileio.c \
-  src/line.c
+  src/fileio.c  \
+  src/line.c   \
+  src/term.c
 
 OBJ := $(SRC:src/%.c=build/%.o)
 BIN := build/mkm
 
-.PHONY: all clean run
+.PHONY: all clean run demo
 
 all: $(BIN)
 
@@ -24,6 +25,9 @@ build/%.o: src/%.c
 
 run: all
 	$(BIN) sample.txt
+
+demo: all
+	$(BIN) --demo
 
 clean:
 	rm -rf build
